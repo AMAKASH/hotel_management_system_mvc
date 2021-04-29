@@ -1,0 +1,15 @@
+{
+    "name": "amakash/hms",
+    "authors": [
+        {
+            "name": "AMAKASH",
+            "email": "61755558+AMAKASH@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+           "app\\": "./" 
+        }
+    }
+}
