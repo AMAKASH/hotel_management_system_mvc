@@ -56,9 +56,10 @@ $reservation = $params['reservation'];
             <span><?php echo $reservation['reservation'] ?></span>
         </div>
 
+       
         <div class="form-group">
             <label>Comments:</label>
-            <span><?php echo $reservation['comments'] ?></span>
+            <input type="text" class="form-control" name="comments" value = "<?php echo $reservation['comments'] ?>">
         </div>
         <div class="form-group">
             <label>Check-in Date:</label>

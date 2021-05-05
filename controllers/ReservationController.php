@@ -69,6 +69,7 @@ class ReservationController{
             $data['checkin'] = $_POST['checkin'];
             $data['checkout'] = $_POST['checkout'];
             $data['assigned_rooms'] = $_POST['assigned_rooms'];
+            $data['comments'] = $_POST['comments'];
             $data['status'] = $_POST['status'] =="Select"? $reservation['status'] : $_POST['status'];
 
             $updated_reservation = new Reservation();

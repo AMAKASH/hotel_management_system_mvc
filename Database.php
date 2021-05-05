@@ -109,8 +109,9 @@ class Database{
 
     public function updateReservation(Reservation $reservation){
         $statement = $this->pdo->prepare('UPDATE reservations SET checkin_date = :checkin_date , checkout_date = :checkout_date ,rent = :rent,
-        assigned_rooms = :assigned_rooms, status= :status WHERE id=:id');
+        assigned_rooms = :assigned_rooms, status= :status, comments= :comments WHERE id=:id');
         $statement->bindValue(":id", $reservation->id);
+        $statement->bindValue(":comments", $reservation->comments);
         $statement->bindValue(":checkin_date", $reservation->checkin);
         $statement->bindValue(":checkout_date", $reservation->checkout);
         $statement->bindValue(":assigned_rooms", $reservation->assigned_rooms);

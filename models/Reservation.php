@@ -17,6 +17,7 @@ class Reservation{
     public $checkout;
     public $assigned_rooms;
     public $status;
+    public $comments;
     public $rent;
 
     public function build($data){
@@ -30,6 +31,7 @@ class Reservation{
         $this->checkin = $data['checkin'] ?? 0;
         $this->checkout = $data['checkout']?? 0;
         $this->assigned_rooms = $data['assigned_rooms'] ?? "";
+        $this->comments = $data['comments'] ?? "";
         $this->status = $data['status']?? 0;
     }
 
