@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\models\User;
 use app\models\Validation;
 use app\Router;
-use Error;
+
 
 class MainController{
     

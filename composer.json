@@ -1,15 +1,19 @@
 {
     "name": "amakash/hms",
+    "description": "BRAC UNIVERSITY:CSE470 Project Hotel Management System",
     "authors": [
         {
             "name": "AMAKASH",
             "email": "61755558+AMAKASH@users.noreply.github.com"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
-           "app\\": "./app" 
+           "app\\": "./app",
+           "test\\": "./test" 
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9"
     }
 }

@@ -11,7 +11,7 @@ use app\controllers\RoomController;
 
 
 $database = new Database();
-$router = new Router($database);
+$router = new Router();
 
 //incoming get requests
 $router->get('/', [MainController::class, 'index']);
