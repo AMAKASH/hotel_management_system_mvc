@@ -24,7 +24,7 @@ $router->get('/dashboard', [UserController::class, 'dashboard']);
 $router->get('/reservation/view', [ReservationController::class, 'viewReservation']);
 $router->get('/room/view', [RoomController::class, 'viewRoom']);
 
-//incoming the post requests
+//incoming post requests
 $router->post('/signup', [MainController::class, 'signup']);
 $router->post('/login', [MainController::class, 'login']);
 $router->post('/profile', [UserController::class, 'userProfile']);
