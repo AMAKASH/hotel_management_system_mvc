@@ -6,10 +6,10 @@
 
     <testsuites>
         <testsuite name ="controllers">
-            <directory>test/controllers</directory>
+            <directory>testCode/controllers</directory>
         </testsuite>
         <testsuite name ="models">
-            <directory>test/models</directory>
+            <directory>testCode/models</directory>
         </testsuite>
     </testsuites>
 </phpunit>
