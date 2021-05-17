@@ -2,7 +2,6 @@
 
 use \PHPUnit\Framework\TestCase;
 use app\controllers\MainController;
-use app\Database;
 use app\Router;
 
 class MainControllerTest extends TestCase{
