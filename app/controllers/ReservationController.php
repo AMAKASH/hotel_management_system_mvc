@@ -25,6 +25,7 @@ class ReservationController{
         $reservation = "";
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data['user_id'] = $current_user['id'];
+            date_default_timezone_set("Asia/Dhaka");
             $data['reservation_date'] =date("Y-m-d H:i:s");
             $data['reservation'] = 'Adult: '.$_POST['adult'].' Child: ' .$_POST['adult'].' Rooms: '.$_POST['room'];
             $data['reserved_date_from'] = $_POST['checkin'];
@@ -37,7 +38,7 @@ class ReservationController{
         }
 
 
-        $router->renderView('dashboard/confirmReservation',$title,[
+        return $router->renderView('dashboard/confirmReservation',$title,[
             'login_status' => $login_status,
             'errors'=> $errors,
             'reservation' =>$reservation,
@@ -77,7 +78,7 @@ class ReservationController{
             $updated_reservation->update();
         }
 
-        $router->renderView('dashboard/viewReservation',$title,[
+        return $router->renderView('dashboard/viewReservation',$title,[
             'login_status' => $login_status,
             'errors'=> $errors,
             'reservation' =>$reservation,

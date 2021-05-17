@@ -24,19 +24,19 @@ class User{
     $this->phone =  trim($user_data['phone']?? "");
     $this->email = trim($user_data['email']?? "");
     $this->dob = trim($user_data['dob'] ?? "");
-    $this->address = trim($user_data['address'] );
+    $this->address = trim($user_data['address'] ?? "" );
     }
 
     public function saveUser(){
         $db = Database::$db;
 
-        $db->createUser($this);
+        return $db->createUser($this);
     }
 
     public function updateUser(){
         $db = Database::$db;
 
-        $db->updateUser($this);
+        return $db->updateUser($this);
     }
 
 

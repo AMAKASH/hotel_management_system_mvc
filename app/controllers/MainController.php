@@ -14,7 +14,8 @@ class MainController{
         $role = $current_user['role'] ?? 0;
         $login_status = isset($_SESSION['current_user'] ) ?? false;
         $title = 'The Grand Maksuda';
-        $router->renderView('users/index',$title,['role' =>$role,'login_status' => $login_status]);
+        return $router->renderView('users/index',$title,['role' =>$role,'login_status' => $login_status]);
+
     }
 
     public function signup(Router $router){
@@ -50,7 +51,7 @@ class MainController{
 
 
 
-        $router->renderView('users/signup',$title,['login_status' => $login_status,
+        return $router->renderView('users/signup',$title,['login_status' => $login_status,
         'role' =>0, 'errors'=> $errors
         ]);
     }
@@ -83,7 +84,7 @@ class MainController{
         }
 
         
-        $router->renderView('users/login',$title,[
+        return $router->renderView('users/login',$title,[
             'errors' => $errors,
             'role' =>0,
             'login_status' => $login_status

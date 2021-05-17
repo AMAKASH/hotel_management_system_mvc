@@ -21,7 +21,7 @@ class RoomController{
         $role = $current_user['role'];
         $login_status = isset($_SESSION['current_user'] ) ?? false;
         $title = "Room | The Grand Maksuda";
-        $errors = [];
+        
         $id = $_GET['id'] ?? "";
         $room = Room::getRoomByID($id)[0];
 
@@ -34,9 +34,9 @@ class RoomController{
             $updated_room->update();
         }
 
-        $router->renderView('dashboard/viewRoom',$title,[
+        return $router->renderView('dashboard/viewRoom',$title,[
             'login_status' => $login_status,
-            'errors'=> $errors,
+            'errors'=> [],
             'room' =>$room,
             'role' =>$role
             ]);

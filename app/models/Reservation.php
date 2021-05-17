@@ -49,17 +49,17 @@ class Reservation{
 
     public function create(){
         $db = Database::$db;
-        $db-> createReservation($this);
+        return $db-> createReservation($this);
     }
 
     public function update(){
         $db = Database::$db;
-        $db-> updateReservation($this);
+        return $db-> updateReservation($this);
     }
 
     public static function delete($id){
         $db = Database::$db;
-        $db-> deleteReservation($id);
+        return $db-> deleteReservation($id);
     }
 
 }

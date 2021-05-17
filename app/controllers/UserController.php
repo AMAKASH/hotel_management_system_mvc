@@ -36,7 +36,7 @@ class UserController{
                 $user->updateUser(); 
         }
         
-        $router->renderView('users/userProfile',$title,['current_user' =>$current_user, 
+        return $router->renderView('users/userProfile',$title,['current_user' =>$current_user, 
             'login_status'=> $login_status, 'role' =>$role
         ]);
         
@@ -61,6 +61,7 @@ class UserController{
             exit;
         }
         $reservations = [];
+        $rooms = [];
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $search = $_GET['search'] ?? "";
             $search_room = $_GET['search_room'] ?? "";
@@ -68,7 +69,7 @@ class UserController{
             $reservations = Reservation::getReservations($search);
             $rooms = Room::getRooms($search_room);
         }
-        $router->renderView('dashboard/managerDash',$title,[
+        return $router->renderView('dashboard/managerDash',$title,[
         'login_status' => $login_status,
         'errors'=> $errors,
         'reservations' =>$reservations,

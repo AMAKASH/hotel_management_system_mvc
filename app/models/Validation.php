@@ -6,14 +6,16 @@ use app\Database;
 
 class Validation{
 
-    public function validate($username = '', $password =''){
+    public function validate($username = '', $password ='',$test = false){
         $db = Database::$db;
 
         $login = $db->validate($username);
 
         if($login && password_verify($password,$login['password'])){
             $_SESSION['current_user'] = $login;
-            $this->redirect($login);
+            if(!$test){
+                $this->redirect($login);
+            }
         }
         else{
             return ['*username or password is incorrect'];
@@ -21,7 +23,7 @@ class Validation{
         
     }
 
-    public function redirect( $current_user){
+    private function redirect( $current_user){
         $role = $current_user['role'];
 
         if($role == 0){
@@ -30,9 +32,8 @@ class Validation{
             exit;
         }
         else{
-            var_dump( $_SERVER['HTTP_REFERER']);
             header('location:/dashboard');
-            
+            exit;
         }
         
         

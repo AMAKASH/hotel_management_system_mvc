@@ -26,6 +26,6 @@ class Room{
 
     public function update(){
         $db = Database::$db;
-        $db-> updateRoom($this);
+       return $db-> updateRoom($this);
     }
 }
