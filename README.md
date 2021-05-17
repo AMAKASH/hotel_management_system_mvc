@@ -13,6 +13,8 @@ To implement this project in your local machine please follow the simple steps g
 
 3.Create a local php server in the folder app/public.
 
+4.You can Enter an admin account Using the following credentials or create a new Guest Account.
+
 admin username: admin
 
 admin password: admin
