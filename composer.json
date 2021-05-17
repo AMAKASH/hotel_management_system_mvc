@@ -10,7 +10,7 @@
     "autoload": {
         "psr-4": {
            "app\\": "./app",
-           "test\\": "./test" 
+           "test\\": "./testCode" 
         }
     },
     "require-dev": {
